@@ -5,14 +5,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-
-@Entity(tableName = "users")
+@Entity(tableName = "products")
 @Parcelize
-data class User(
-    @PrimaryKey
-    var id: String,
+data class Product(
+    @PrimaryKey var id: String,
     var name: String,
-    var email: String,
-    var password: String,
-    var isLoggedIn: Boolean = false
+    var price: Int,
+    var image: String
 ) : Parcelable

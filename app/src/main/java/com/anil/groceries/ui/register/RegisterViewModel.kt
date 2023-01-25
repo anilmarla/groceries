@@ -2,6 +2,7 @@ package com.anil.groceries.ui.register
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anil.groceries.database.AppDatabase
@@ -13,13 +14,15 @@ import java.util.*
 
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {
     private var usersRepository: UsersRepository
-    var users: MutableLiveData<List<User>> = MutableLiveData()
+    var users: LiveData<List<User>> = MutableLiveData()
+    var user: MutableLiveData<User> = MutableLiveData()
 
     init {
         val userDao = AppDatabase.getDatabase(application).userDao()
 
         usersRepository = UsersRepository(userDao)
 
+        users = usersRepository.getUsers()
     }
 
     fun addUser(name: String, email: String, password: String) {
@@ -35,4 +38,11 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
 
     }
 
+    fun getUserByEmailId(email: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            user.postValue(usersRepository.getUserByEmailId(email))
+        }
+    }
 }
+
+

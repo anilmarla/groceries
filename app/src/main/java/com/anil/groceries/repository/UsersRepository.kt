@@ -7,7 +7,6 @@ import com.anil.groceries.model.User
 class UsersRepository(private val userDao: UserDao) {
 
 
-
     fun getUsers(): LiveData<List<User>> {
         return userDao.getAll()
     }
@@ -18,5 +17,13 @@ class UsersRepository(private val userDao: UserDao) {
 
     fun update(user: User) {
         return userDao.update(user)
+    }
+
+    fun getUserByEmailId(email: String): User {
+        return userDao.getUserEmailId(email)
+    }
+
+    fun isLoggedInUser(): User {
+        return userDao.isLoggedInUser()
     }
 }

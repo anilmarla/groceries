@@ -14,6 +14,8 @@
         <!-- Customize your theme here. -->
 
         <item name="android:fontFamily">@font/gilroy_medium</item>
+
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
     </style>
 
     <style name="Theme.Groceries.NoActionBar">
@@ -26,28 +28,10 @@
         <item name="fontFamily">@font/font_family_semi_bold</item>
         <item name="android:fontFamily">@font/font_family_semi_bold</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/txt_sub_title</item>
+        <item name="android:textSize">@dimen/txt_title</item>
     </style>
 
-    <!-- Text Input Themes -->
-    <style name="Theme.App" parent="Theme.MaterialComponents">
-        ...
-        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
-    </style>
-
-    <style name="Widget.App.TextInputLayout" parent="MaterialAlertDialog.MaterialComponents.Title.Icon">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
-        <item name="backgroundColor">@color/white</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
-        <item name="hintTextColor">?attr/colorOnSurface</item>
-    </style>
-
-    <style name="ThemeOverlay.App.TextInputLayout" parent="">
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorOnSurface">@color/black</item>
-        <item name="colorError">@color/red</item>
-        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>
-        <item name="textAppearanceCaption">@style/TextAppearance.App.Caption</item>
-        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.*</item>
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/white</item>
     </style>
 </resources>

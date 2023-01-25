@@ -14,10 +14,15 @@ interface UserDao {
     fun insert(user: User)
 
     @Update
-     fun update(user: User)
+    fun update(user: User)
 
-@Query("SELECT * from users")
-     fun getAll(): LiveData<List<User>>
+    @Query("SELECT * from users")
+    fun getAll(): LiveData<List<User>>
 
+    @Query("SELECT * from users WHERE email=:email")
+    fun getUserEmailId(email: String): User
+
+    @Query("SELECT * from users WHERE isLoggedIn=true")
+    fun isLoggedInUser(): User
 
 }
