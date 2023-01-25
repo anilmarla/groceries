@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_regular">16dp</dimen>
+    <dimen name="splash_image_width">54dp</dimen>
+    <dimen name="splash_image_height">63dp</dimen>
+    <dimen name="splash_image_margin">73dp</dimen>
+    <dimen name="register_screen_logo_top">28dp</dimen>
+    <dimen name="login_screen_padding">25dp</dimen>
+    <dimen name="txt_sub_title">26sp</dimen>
+    <dimen name="sign_up_margin_top">184dp</dimen>
+    <dimen name="sign_up_description_text">16sp</dimen>
+    <dimen name="user_name_text">16sp</dimen>
+    <dimen name="margin_top_layout">10dp</dimen>
+    <dimen name="margin_top_username">40dp</dimen>
+    <dimen name="input_margin_top">30dp</dimen>
+    <dimen name="btn_corner_radius">19dp</dimen>
+    <dimen name="button_width">364dp</dimen>
+    <dimen name="button_height">67dp</dimen>
+    <dimen name="margin_top">25dp</dimen>
+    <dimen name="text_description">14sp</dimen>
+    <dimen name="terms_margin_top">20dp</dimen>
+    <dimen name="input_text_size">18sp</dimen>
+    <dimen name="signup_logo_margin_top">44dp</dimen>
+</resources>

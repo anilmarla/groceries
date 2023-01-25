@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Groceries</string>
+    <string name="splash_name">netcar</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_description">Enter your credentials to continue</string>
+    <string name="hint_user_name">Username</string>
+    <string name="enter_name">Enter name</string>
+    <string name="user_email">Email</string>
+    <string name="enter_email">Enter email</string>
+    <string name="user_password">Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="terms_and_condition">By continuing you agree to our Terms of Service and Privacy Policy.</string>
+    <string name="old_user">Already have an account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+</resources>
