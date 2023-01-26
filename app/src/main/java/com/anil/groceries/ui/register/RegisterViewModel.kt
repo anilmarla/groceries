@@ -1,27 +1,23 @@
 package com.anil.groceries.ui.register
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.anil.groceries.database.AppDatabase
 import com.anil.groceries.model.User
 import com.anil.groceries.repository.UsersRepository
+import com.anil.groceries.ui.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 
-class RegisterViewModel(application: Application) : AndroidViewModel(application) {
+class RegisterViewModel(application: Application) : BaseViewModel(application) {
     private var usersRepository: UsersRepository
     var users: LiveData<List<User>> = MutableLiveData()
     var user: MutableLiveData<User> = MutableLiveData()
 
     init {
-        val userDao = AppDatabase.getDatabase(application).userDao()
-
-        usersRepository = UsersRepository(userDao)
-
+        usersRepository = UsersRepository(application)
         users = usersRepository.getUsers()
     }
 

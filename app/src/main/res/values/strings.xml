@@ -28,4 +28,6 @@
     <string name="favourite">Favourite</string>
     <string name="cart">Cart</string>
     <string name="account">Account</string>
+    <string name="enter_email_error">Please enter Email</string>
+    <string name="enter_password_error">Please enter password</string>
 </resources>
