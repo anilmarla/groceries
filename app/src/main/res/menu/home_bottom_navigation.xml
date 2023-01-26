@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-   <!-- <item
+    <item
         android:id="@+id/explore"
         android:icon="@drawable/ic_explore"
         android:title="@string/explore" />
-    <item
-        android:id="@+id/favourite"
-        android:icon="@drawable/ic_favourite"
-        android:title="@string/favourite" />
     <item
         android:id="@+id/cart"
         android:icon="@drawable/ic_cart"
         android:title="@string/cart" />
     <item
+        android:id="@+id/favourite"
+        android:icon="@drawable/ic_favourite"
+        android:title="@string/favourite" />
+
+    <item
         android:id="@+id/account"
         android:icon="@drawable/ic_account"
-        android:title="@string/account" />-->
+        android:title="@string/account" />
 
 </menu>

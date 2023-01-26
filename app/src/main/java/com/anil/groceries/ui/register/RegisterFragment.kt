@@ -38,6 +38,10 @@ class RegisterFragment : BaseFragment() {
                     viewModel.getUserByEmailId(email)
                 }
             }
+
+            btnSignIn.setOnClickListener {
+                launchLogin()
+            }
         }
 
         viewModel.user.observe(viewLifecycleOwner) { user ->
@@ -101,7 +105,6 @@ class RegisterFragment : BaseFragment() {
             } else {
                 inputPassword.error = null
             }
-
             return true
         }
     }

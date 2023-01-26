@@ -22,7 +22,9 @@ interface UserDao {
     @Query("SELECT * from users WHERE email=:email")
     fun getUserEmailId(email: String): User
 
+    @Query("SELECT * from users WHERE email=:email AND password=:password")
+    fun getUserEmailAndPassword(email: String, password: String): User
+
     @Query("SELECT * from users WHERE isLoggedIn=true")
     fun isLoggedInUser(): User
-
 }

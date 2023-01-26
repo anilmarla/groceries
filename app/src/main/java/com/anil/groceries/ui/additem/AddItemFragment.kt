@@ -1,25 +1,24 @@
-package com.anil.groceries.ui.home
+package com.anil.groceries.ui.additem
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.anil.groceries.R
-import com.anil.groceries.ui.base.BaseFragment
 
-class HomeFragment : BaseFragment() {
+class AddItemFragment : Fragment() {
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() = AddItemFragment()
     }
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: AddItemViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AddItemViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
@@ -27,7 +26,7 @@ class HomeFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_add_item, container, false)
     }
 
 }

@@ -11,5 +11,7 @@ data class Product(
     @PrimaryKey var id: String,
     var name: String,
     var price: Int,
-    var image: String
+    var image: String,
+    var categoryId: String,
+    var isAddedCart: Boolean =false
 ) : Parcelable
