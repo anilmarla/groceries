@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.anil.groceries.R
+import com.anil.groceries.ui.base.BaseFragment
 
-class CartFragment : Fragment() {
+class CartFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = CartFragment()

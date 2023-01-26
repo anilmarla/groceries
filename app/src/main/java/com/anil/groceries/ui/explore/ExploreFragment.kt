@@ -1,14 +1,20 @@
 package com.anil.groceries.ui.explore
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.anil.groceries.R
+import com.anil.groceries.databinding.FragmentExploreBinding
+import com.anil.groceries.model.Category
+import com.anil.groceries.ui.base.BaseFragment
+import com.anil.groceries.utils.MarginItemDecoration
 
-class ExploreFragment : Fragment() {
+class ExploreFragment : BaseFragment() {
+    private lateinit var binding: FragmentExploreBinding
+    private lateinit var adapter: CategoriesAdapter
 
     companion object {
         fun newInstance() = ExploreFragment()
@@ -20,7 +26,47 @@ class ExploreFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_explore, container, false)
+        binding = FragmentExploreBinding.inflate(inflater, container, false)
+        renderList()
+
+
+
+        return binding.root
+    }
+
+    private fun renderList() {
+        adapter = CategoriesAdapter()
+        binding.recyclerView.adapter = adapter
+
+        adapter.submitList(getCategories())
+
+        // grid layout
+        binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
+
+        // space b/w items
+        binding.recyclerView.addItemDecoration(
+            MarginItemDecoration(resources.getDimensionPixelSize(R.dimen.margin_small), 2)
+        )
+    }
+
+    private fun getCategories(): List<Category>? {
+        val items = mutableListOf<Category>()
+
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        items.add(Category(getString(R.string.fruits_vegetables), "https://www.pngmart.com/files/17/Organic-Fruits-And-Vegetables-PNG-Image.png", R.color.bg_fruits, borderColor = R.color.border_fruits))
+        return items
+
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

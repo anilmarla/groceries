@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.anil.groceries.R
+import com.anil.groceries.ui.base.BaseFragment
 
-class AccountFragment : Fragment() {
+class AccountFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = AccountFragment()

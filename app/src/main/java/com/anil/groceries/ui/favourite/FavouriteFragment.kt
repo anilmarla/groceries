@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.anil.groceries.R
+import com.anil.groceries.ui.base.BaseFragment
 
-class FavouriteFragment : Fragment() {
+class FavouriteFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = FavouriteFragment()
@@ -20,7 +21,7 @@ class FavouriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favourite2, container, false)
+        return inflater.inflate(R.layout.fragment_favourite, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

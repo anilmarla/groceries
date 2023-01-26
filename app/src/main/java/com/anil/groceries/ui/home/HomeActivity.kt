@@ -19,34 +19,43 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        loadFragment(getString(R.string.explore), ExploreFragment.newInstance())
+        binding.fab.show()
 
         binding.apply {
-            bottomNavigation.setOnClickListener {
+            bottomNavigation.setOnItemSelectedListener {
 
-                when (it.id) {
-                    R.id.explore -> loadFragment(getString(R.string.explore), ExploreFragment())
+                binding.fab.hide()
 
-                    R.id.cart -> loadFragment(getString(R.string.cart), CartFragment())
+                when (it.itemId) {
+                    R.id.explore -> {
+                        loadFragment(
+                            getString(R.string.explore),
+                            ExploreFragment.newInstance()
+                        )
 
-                    R.id.favourite -> loadFragment(getString(R.string.favourite), FavouriteFragment())
+                        binding.fab.show()
+                    }
 
-                    R.id.account -> loadFragment(getString(R.string.account), AccountFragment())
+                    R.id.cart -> loadFragment(getString(R.string.cart), CartFragment.newInstance())
 
+                    R.id.favourite -> loadFragment(
+                        getString(R.string.favourite), FavouriteFragment.newInstance()
+                    )
 
+                    R.id.account -> loadFragment(
+                        getString(R.string.account),
+                        AccountFragment.newInstance()
+                    )
                 }
-                if (savedInstanceState == null) {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, HomeFragment.newInstance())
-                        .commitNow()
-                }
+
+                return@setOnItemSelectedListener true
             }
         }
     }
 
     private fun loadFragment(title: String, fragment: Fragment) {
-
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
-
         setTitle(title)
     }
 }

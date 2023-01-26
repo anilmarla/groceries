@@ -10,10 +10,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.anil.groceries.databinding.FragmentSplashBinding
+import com.anil.groceries.ui.base.BaseFragment
 import com.anil.groceries.ui.home.HomeActivity
 import com.anil.groceries.ui.login.LoginActivity
 
-class SplashFragment : Fragment() {
+class SplashFragment : BaseFragment() {
     private lateinit var binding: FragmentSplashBinding
 
     private val viewModel: SplashViewModel by viewModels()
@@ -28,7 +29,6 @@ class SplashFragment : Fragment() {
     ): View? {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
 
