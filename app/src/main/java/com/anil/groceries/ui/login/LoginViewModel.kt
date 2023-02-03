@@ -24,5 +24,10 @@ class LoginViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
+    fun update(user: User) {
+        viewModelScope.launch(Dispatchers.IO) {
+            usersRepository.update(user)
+        }
+    }
 }
 

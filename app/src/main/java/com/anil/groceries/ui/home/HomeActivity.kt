@@ -7,7 +7,7 @@ import com.anil.groceries.R
 import com.anil.groceries.databinding.ActivityMainBinding
 import com.anil.groceries.ui.account.AccountFragment
 import com.anil.groceries.ui.cart.CartFragment
-import com.anil.groceries.ui.explore.ExploreFragment
+import com.anil.groceries.ui.explore.CategoryFragment
 import com.anil.groceries.ui.favourite.FavouriteFragment
 
 class HomeActivity : AppCompatActivity() {
@@ -19,25 +19,24 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadFragment(getString(R.string.explore), ExploreFragment.newInstance())
-        binding.fab.show()
+        loadFragment(getString(R.string.explore), CategoryFragment.newInstance())
 
         binding.apply {
             bottomNavigation.setOnItemSelectedListener {
-
-                binding.fab.hide()
 
                 when (it.itemId) {
                     R.id.explore -> {
                         loadFragment(
                             getString(R.string.explore),
-                            ExploreFragment.newInstance()
+                            CategoryFragment.newInstance()
                         )
-
-                        binding.fab.show()
                     }
 
-                    R.id.cart -> loadFragment(getString(R.string.cart), CartFragment.newInstance())
+
+                    R.id.cart -> loadFragment(getString(R.string.cart), CartFragment.newInstance(
+                        intent.extras
+                    )
+                    )
 
                     R.id.favourite -> loadFragment(
                         getString(R.string.favourite), FavouriteFragment.newInstance()
@@ -51,6 +50,7 @@ class HomeActivity : AppCompatActivity() {
 
                 return@setOnItemSelectedListener true
             }
+
         }
     }
 

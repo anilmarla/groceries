@@ -11,7 +11,7 @@ class AddItemActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_item)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, AddItemFragment.newInstance())
+                .replace(R.id.container, AddItemFragment.newInstance(intent.extras))
                 .commitNow()
         }
     }

@@ -1,33 +1,57 @@
 package com.anil.groceries.ui.favourite
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.anil.groceries.R
+import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
+import com.anil.groceries.databinding.FragmentFavouriteBinding
+import com.anil.groceries.model.Product
 import com.anil.groceries.ui.base.BaseFragment
+import com.anil.groceries.ui.product_details.ProductDetailsViewModel
+import com.anil.groceries.ui.productlist.ProductListViewModel
+import timber.log.Timber
 
-class FavouriteFragment : BaseFragment() {
+class FavouriteFragment : BaseFragment(), FavouritesAdapterListener {
+    private lateinit var binding: FragmentFavouriteBinding
+    private lateinit var adapter: FavouritesAdapter
+    private var productId: String? = null
+    private val viewModel: FavouriteViewModel by viewModels()
+    private val viewModel2: ProductDetailsViewModel by viewModels()
+
 
     companion object {
         fun newInstance() = FavouriteFragment()
     }
 
-    private lateinit var viewModel: FavouriteViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favourite, container, false)
+        binding = FragmentFavouriteBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FavouriteViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        adapter = FavouritesAdapter(this)
+        binding.recyclerView.adapter = adapter
+
+        viewModel.favouriteProduct.observe(viewLifecycleOwner) {
+            Timber.e("products:- $it")
+            binding.emptyMessage.isVisible = it.isEmpty()
+            adapter.submitList(null)
+            adapter.submitList(it)
+
+
+
+        }
     }
 
+    override fun onIconClicked(product: Product) {
+        TODO("Not yet implemented")
+    }
 }

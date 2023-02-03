@@ -12,4 +12,15 @@
     <color name="login_text_color">#7c7c7c</color>
     <color name="bg_fruits">#eef7f1</color>
     <color name="border_fruits">#53B175</color>
+    <color name="boarder_meat">#facbc0</color>
+    <color name="boarder_bakery">#ecdcf1</color>
+    <color name="boarder_dairy">#fef0c3</color>
+    <color name="boarder_beverages">#dff1fb</color>
+    <color name="bg_meat_fish">#fde8e4</color>
+    <color name="bg_bakery_snakes">#f4ebf7</color>
+    <color name="bg_dairy_eggs">#fff8e5</color>
+    <color name="bg_beverages">#edf7fc</color>
+    <color name="bg_oil">#fef6ed</color>
+    <color name="btn_border_add_remove">#e2e2e2</color>
+
 </resources>

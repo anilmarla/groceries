@@ -31,7 +31,32 @@
     <string name="enter_email_error">Please enter Email</string>
     <string name="enter_password_error">Please enter password</string>
     <string name="product_name">"Product Name "</string>
-    <string name="add_product">Add New Product</string>
+    <string name="add_product">Add Product</string>
     <string name="price">Price</string>
     <string name="fruits_vegetables"><![CDATA[Fresh fruits\n& Vegetables]]></string>
+    <string name="product_image">Image</string>
+    <string name="add_new_product">Add new product</string>
+    <string name="cooking_oil_ghee"><![CDATA[Cooking Oil\n& Ghee]]></string>
+    <string name="meat_fish"><![CDATA[Meat \n& Fish]]></string>
+    <string name="bakery_snacks"><![CDATA[Bakery & Snacks]]></string>
+    <string name="dairy_eggs"><![CDATA[Dairy & Snacks]]></string>
+    <string name="beverages">"Beverages"</string>
+    <string name="add_new_category">Add new Category</string>
+    <string name="category_name">Name</string>
+    <string name="image">Image</string>
+    <string name="no_categories_message">"No Categories are available "</string>
+    <string name="product_added">Product is added</string>
+    <string name="category_added_list">Category is added in the list</string>
+    <string name="input_category_name">\"Please input category name \"</string>
+    <string name="input_category_image">\"Please input category image \"</string>
+    <string name="products">Products</string>
+    <string name="no_products_message">No Products are available</string>
+    <string name="no_products_cart">No products added to cart</string>
+    <string name="checkout">Check out price is %d </string>
+    <string name="rupee">₹%d</string>
+    <string name="add_product_cart">Add To Cart</string>
+    <string name="no_products_favourites">No products in favourites</string>
+    <string name="add_all">Add all items to cart</string>
+
+
 </resources>

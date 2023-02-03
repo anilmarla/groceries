@@ -13,7 +13,6 @@ class SplashViewModel(application: Application) : BaseViewModel(application) {
     private var usersRepository: UsersRepository
     var loggedInUser: MutableLiveData<User> = MutableLiveData()
 
-
     init {
         usersRepository = UsersRepository(application)
     }
@@ -23,7 +22,4 @@ class SplashViewModel(application: Application) : BaseViewModel(application) {
             loggedInUser.postValue(usersRepository.isLoggedInUser())
         }
     }
-
-
-
 }
