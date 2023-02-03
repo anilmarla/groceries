@@ -16,8 +16,43 @@
         android:theme="@style/Theme.Groceries"
         tools:targetApi="31">
         <activity
-            android:name=".ui.additem.AddItemActivity"
+            android:name=".ui.product_details.ProductDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.productlist.ProductListActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.cart.CartActivity"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.add_category.AddCategoryActivity"
+            android:exported="false"
+            android:label="@string/add_new_category"
+            android:parentActivityName=".ui.home.HomeActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.productlist.ProductListActivity"
+            android:exported="false"
+            android:label="@string/products"
+            android:parentActivityName=".ui.home.HomeActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.additem.AddItemActivity"
+            android:exported="false"
+            android:label="@string/add_product"
+            android:parentActivityName=".ui.productlist.ProductListActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

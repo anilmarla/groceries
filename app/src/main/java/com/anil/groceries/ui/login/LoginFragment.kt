@@ -44,12 +44,14 @@ class LoginFragment : BaseFragment() {
             btnSignUp.setOnClickListener {
                 launchRegister()
             }
-
         }
         viewModel.user.observe(viewLifecycleOwner) {
             Timber.e("logged in User $it")
 
             if (it != null) {
+                it.isLoggedIn = true
+                viewModel.update(it)
+
                 launchHome()
             } else {
                 toast("Invalid credentials. Please try again!")
@@ -62,6 +64,7 @@ class LoginFragment : BaseFragment() {
         startActivity(intent)
         activity?.finish()
     }
+
     private fun launchRegister() {
         val intent = Intent(activity, RegisterActivity::class.java)
         startActivity(intent)
@@ -91,6 +94,7 @@ class LoginFragment : BaseFragment() {
         return true
 
     }
+
 }
 
 

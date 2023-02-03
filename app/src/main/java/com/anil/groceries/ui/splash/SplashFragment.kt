@@ -38,11 +38,10 @@ class SplashFragment : BaseFragment() {
         viewModel.getLoggedInUser()
 
         viewModel.loggedInUser.observe(viewLifecycleOwner) { user ->
-            if (user != null) {
+            if (user == null) {
                 Handler(Looper.getMainLooper()).postDelayed({
                     launchLogin()
                 }, 2000)
-                launchLogin()
             } else {
                 Handler(Looper.getMainLooper()).postDelayed({
                     launchHome()
@@ -55,7 +54,7 @@ class SplashFragment : BaseFragment() {
 
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-        activity?.finish()
+        //activity?.finish()
     }
 
     private fun launchHome() {
@@ -65,6 +64,4 @@ class SplashFragment : BaseFragment() {
         startActivity(intent)
         activity?.finish()
     }
-
-
 }

@@ -7,5 +7,9 @@ abstract class BaseFragment : Fragment() {
     fun toast(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
+    fun rupee(rupees: Int ) {
+         rupees
+
+    }
 
 }

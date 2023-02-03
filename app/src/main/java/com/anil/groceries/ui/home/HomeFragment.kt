@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.anil.groceries.R
+import com.anil.groceries.ui.additem.AddItemViewModel
 import com.anil.groceries.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment() {
@@ -16,6 +18,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private lateinit var viewModel: HomeViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +32,7 @@ class HomeFragment : BaseFragment() {
     ): View {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
+
+
 
 }

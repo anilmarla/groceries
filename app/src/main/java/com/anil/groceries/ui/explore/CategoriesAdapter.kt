@@ -9,17 +9,21 @@ import com.anil.groceries.databinding.ListItemCategoryBinding
 import com.anil.groceries.model.Category
 import com.bumptech.glide.Glide
 
-class CategoriesAdapter :
+class CategoriesAdapter(var listener: CategoryListAdapterListener) :
     ListAdapter<Category, CategoriesAdapter.CategoryItemViewHolder>(CategoryAdapterDiffCallBack()) {
-    class CategoryItemViewHolder(val binding: ListItemCategoryBinding) :
+    class CategoryItemViewHolder(private val binding: ListItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(category: Category) {
+        fun bind(category: Category, listener: CategoryListAdapterListener) {
 
             binding.categoryName.text = category.name
 
             Glide.with(binding.root.context).load(category.image)
                 .fitCenter()
                 .into(binding.image)
+
+            binding.root.setOnClickListener {
+                listener.onCardClicked(category.id, category.name)
+            }
 
             binding.card.setCardBackgroundColor(
                 ContextCompat.getColor(
@@ -32,6 +36,8 @@ class CategoriesAdapter :
                 binding.root.context,
                 category.borderColor
             )
+
+
         }
 
     }
@@ -43,7 +49,7 @@ class CategoriesAdapter :
     }
 
     override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), listener)
     }
 }
 

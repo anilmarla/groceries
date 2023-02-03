@@ -31,7 +31,6 @@ class RegisterViewModel(application: Application) : BaseViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             usersRepository.insert(user)
         }
-
     }
 
     fun getUserByEmailId(email: String) {
