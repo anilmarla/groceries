@@ -48,7 +48,7 @@ class ProductListFragment : BaseFragment(), ProductListAdapterListener {
         }
 
 
-        adapter = ProductListAdapter(this)
+        adapter = ProductListAdapter(this, context)
         binding.recyclerView.adapter = adapter
 
         binding.recyclerView.layoutManager = GridLayoutManager(context, 2)

@@ -13,7 +13,7 @@ import com.anil.groceries.model.User
 
 
 @Database(
-    entities = [User::class, Product::class, Category::class], version = 5
+    entities = [User::class, Product::class, Category::class], version = 6
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao

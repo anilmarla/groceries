@@ -13,8 +13,13 @@ class ProductUtils {
         }
 
         fun minusProduct(product: Product): Product {
-            product.isAddedCart = false
-            product.cartQuantity = 0
+
+            if (product.cartQuantity > 1) {
+                product.cartQuantity = product.cartQuantity - 1
+            } else {
+                product.isAddedCart = false
+                product.cartQuantity = 0
+            }
             return product
         }
 

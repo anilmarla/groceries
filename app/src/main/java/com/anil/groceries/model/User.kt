@@ -14,5 +14,6 @@ data class User(
     var name: String,
     var email: String,
     var password: String,
-    var isLoggedIn: Boolean = false
+    var isLoggedIn: Boolean = false,
+    var profilePicture: String? = null
 ) : Parcelable

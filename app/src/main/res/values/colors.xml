@@ -22,5 +22,7 @@
     <color name="bg_beverages">#edf7fc</color>
     <color name="bg_oil">#fef6ed</color>
     <color name="btn_border_add_remove">#e2e2e2</color>
+    <color name="divider_account">#E2E2E2</color>
+    <color name="btn_minus_gray">#b3b3b3</color>
 
 </resources>

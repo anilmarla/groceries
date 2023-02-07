@@ -6,5 +6,6 @@ interface CartListAdapterListener {
     fun onPlusClicked(product: Product)
     fun onRemoveClicked(product: Product)
     fun onMinusClicked(product: Product)
+    fun onProductClicked(product: Product)
 
 }

@@ -1,26 +1,22 @@
 package com.anil.groceries.ui.favourite
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
 import com.anil.groceries.databinding.FragmentFavouriteBinding
 import com.anil.groceries.model.Product
 import com.anil.groceries.ui.base.BaseFragment
-import com.anil.groceries.ui.product_details.ProductDetailsViewModel
-import com.anil.groceries.ui.productlist.ProductListViewModel
+import com.anil.groceries.ui.product_details.ProductDetailsActivity
 import timber.log.Timber
 
 class FavouriteFragment : BaseFragment(), FavouritesAdapterListener {
     private lateinit var binding: FragmentFavouriteBinding
     private lateinit var adapter: FavouritesAdapter
-    private var productId: String? = null
     private val viewModel: FavouriteViewModel by viewModels()
-    private val viewModel2: ProductDetailsViewModel by viewModels()
-
 
     companion object {
         fun newInstance() = FavouriteFragment()
@@ -46,12 +42,14 @@ class FavouriteFragment : BaseFragment(), FavouritesAdapterListener {
             adapter.submitList(null)
             adapter.submitList(it)
 
-
-
         }
     }
 
     override fun onIconClicked(product: Product) {
-        TODO("Not yet implemented")
+        startActivity(
+            Intent(activity, ProductDetailsActivity::class.java).apply {
+                putExtra("product_id", product.id)
+            }
+        )
     }
 }

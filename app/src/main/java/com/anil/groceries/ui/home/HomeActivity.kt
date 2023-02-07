@@ -3,15 +3,19 @@ package com.anil.groceries.ui.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.anil.groceries.R
 import com.anil.groceries.databinding.ActivityMainBinding
-import com.anil.groceries.ui.account.AccountFragment
-import com.anil.groceries.ui.cart.CartFragment
-import com.anil.groceries.ui.explore.CategoryFragment
-import com.anil.groceries.ui.favourite.FavouriteFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,39 +23,24 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadFragment(getString(R.string.explore), CategoryFragment.newInstance())
+        setupBottomNavigation()
 
-        binding.apply {
-            bottomNavigation.setOnItemSelectedListener {
+    }
 
-                when (it.itemId) {
-                    R.id.explore -> {
-                        loadFragment(
-                            getString(R.string.explore),
-                            CategoryFragment.newInstance()
-                        )
-                    }
+    private fun setupBottomNavigation() {
+        navController = this.findNavController(R.id.container)
+        binding.bottomNavigation.setupWithNavController(navController)
 
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.explore, R.id.cart, R.id.favourite, R.id.account
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
 
-                    R.id.cart -> loadFragment(getString(R.string.cart), CartFragment.newInstance(
-                        intent.extras
-                    )
-                    )
-
-                    R.id.favourite -> loadFragment(
-                        getString(R.string.favourite), FavouriteFragment.newInstance()
-                    )
-
-                    R.id.account -> loadFragment(
-                        getString(R.string.account),
-                        AccountFragment.newInstance()
-                    )
-                }
-
-                return@setOnItemSelectedListener true
-            }
-
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     private fun loadFragment(title: String, fragment: Fragment) {

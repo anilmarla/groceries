@@ -18,7 +18,7 @@ class CategoriesAdapter(var listener: CategoryListAdapterListener) :
             binding.categoryName.text = category.name
 
             Glide.with(binding.root.context).load(category.image)
-                .fitCenter()
+                .centerCrop()
                 .into(binding.image)
 
             binding.root.setOnClickListener {
