@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="@dimen/margin_regular">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -25,6 +24,7 @@
                 android:id="@+id/image"
                 android:layout_width="@dimen/img_category_height"
                 android:layout_height="@dimen/img_category_height"
+                android:layout_marginStart="@dimen/margin_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,24 +33,23 @@
                 style="@style/Theme.Groceries.SubTitleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Apples"
                 android:layout_marginStart="@dimen/margin_regular"
                 app:layout_constraintStart_toEndOf="@id/image"
-                app:layout_constraintTop_toTopOf="@+id/image" />
+                app:layout_constraintTop_toTopOf="@+id/image"
+                tools:text="Apples" />
 
             <ImageView
                 android:id="@+id/btn_item_minus"
                 android:layout_width="@dimen/btn_add_remove"
                 android:layout_height="@dimen/btn_add_remove"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:background="@drawable/bg_add_remove_button"
-                android:src="@drawable/ic_remove"
-                app:tint="@color/light_green"
                 android:layout_marginTop="@dimen/margin_extra_regular"
-                app:cardCornerRadius="@dimen/margin_small"
+                android:background="@drawable/bg_add_remove_button"
+                android:backgroundTint="@color/white"
+                android:backgroundTintMode="add"
+                android:src="@drawable/ic_remove"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/item_name"
-                app:strokeWidth="@dimen/stroke_width"
-                />
+                app:tint="@color/btn_minus_gray" />
 
             <TextView
                 android:id="@+id/item_quantity"
@@ -58,21 +57,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/margin_regular"
-                tools:text="3"
-                app:layout_constraintTop_toTopOf="@id/btn_item_minus"
                 app:layout_constraintBottom_toBottomOf="@id/btn_item_minus"
-                app:layout_constraintStart_toEndOf="@id/btn_item_minus"/>
+                app:layout_constraintStart_toEndOf="@id/btn_item_minus"
+                app:layout_constraintTop_toTopOf="@id/btn_item_minus"
+                tools:text="3" />
 
             <TextView
                 android:id="@+id/item_price"
-                style="@style/Theme.Groceries.SubTitleSmall"
+                style="@style/Theme.Groceries.SubTitle_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/margin_regular"
-                tools:text="345"
-                app:layout_constraintTop_toTopOf="@id/btn_item_minus"
                 app:layout_constraintBottom_toBottomOf="@id/btn_item_minus"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_item_minus"
+                tools:text="345" />
 
             <ImageView
                 android:id="@+id/btn_item_add"
@@ -80,21 +79,23 @@
                 android:layout_height="@dimen/btn_add_remove"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/ic_add"
-                android:background="@drawable/bg_add_remove_button"
+                android:src="@drawable/bg_plus"
                 app:layout_constraintBottom_toBottomOf="@id/btn_item_minus"
                 app:layout_constraintStart_toEndOf="@id/item_quantity"
                 app:layout_constraintTop_toTopOf="@id/btn_item_minus"
-                app:strokeWidth="@dimen/stroke_width"
                 app:tint="@color/light_green" />
 
             <ImageButton
                 android:id="@+id/btn_item_remove"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/btn_add_remove"
+                android:layout_height="@dimen/btn_add_remove"
+                android:layout_marginEnd="@dimen/margin_regular"
+                android:backgroundTint="@color/white"
                 android:src="@drawable/ic_close"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/btn_minus_gray" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -104,7 +105,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dividerColor="@color/black"
+        app:dividerColor="@color/btn_minus_gray"
         app:layout_constraintTop_toBottomOf="@id/card" />
 
 

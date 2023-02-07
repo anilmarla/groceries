@@ -1,5 +1,6 @@
 package com.anil.groceries.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +11,15 @@ import com.anil.groceries.R
 import com.anil.groceries.databinding.FragmentCartBinding
 import com.anil.groceries.model.Product
 import com.anil.groceries.ui.base.BaseFragment
+import com.anil.groceries.ui.product_details.ProductDetailsActivity
 import com.anil.groceries.utils.ProductUtils.Companion.addProductToCart
+import com.anil.groceries.utils.ProductUtils.Companion.minusProduct
 import timber.log.Timber
 
 class CartFragment : BaseFragment(), CartListAdapterListener {
     private lateinit var binding: FragmentCartBinding
     private lateinit var adapter: CartListAdapter
+
     private val viewModel: CartViewModel by viewModels()
 
     companion object {
@@ -29,12 +33,13 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
     ): View? {
         binding = FragmentCartBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CartListAdapter(this)
+        adapter = CartListAdapter(this, context)
         binding.recyclerView.adapter = adapter
 
         viewModel.cartProducts.observe(viewLifecycleOwner) {
@@ -49,18 +54,23 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
         }
     }
 
-    private fun renderPrice(products: List<Product>?){
+    private fun renderPrice(products: List<Product>?) {
         products?.let {
             var sum = 0
-            for (i in products.indices){
+            for (i in products.indices) {
                 val totalvalue = products[i].cartQuantity * products[i].price
 
                 sum += totalvalue
             }
             Timber.e("The sum is $sum")
-            binding.btnCheckout.text = getString(R.string.checkout, sum)
-        }
+            binding.btnCheckout.text = if (sum > 1) {
+                getString(R.string.checkout, sum)
+            } else {
+                getString(R.string.no_products_cart)
+            }
 
+            binding.btnCheckout.isVisible = sum > 0
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,13 +90,16 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
     }
 
     override fun onMinusClicked(product: Product) {
-        if (product.cartQuantity > 1) {
-            product.cartQuantity = product.cartQuantity - 1
-        } else {
-            product.isAddedCart = false
-            product.cartQuantity = 0
-        }
-        viewModel.update(product)
+        viewModel.update(minusProduct(product))
+    }
+
+    override fun onProductClicked(product: Product) {
+        startActivity(
+            Intent(activity, ProductDetailsActivity::class.java).apply {
+                putExtra("product_id", product.id)
+            }
+        )
+
     }
 }
 

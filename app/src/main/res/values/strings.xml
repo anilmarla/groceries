@@ -57,6 +57,16 @@
     <string name="add_product_cart">Add To Cart</string>
     <string name="no_products_favourites">No products in favourites</string>
     <string name="add_all">Add all items to cart</string>
+    <string name="error_select_category_image">Please select category image</string>
+    <string name="orders">Orders</string>
+    <string name="my_details">My Details</string>
+    <string name="delivert_address">Delivery Address</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="notifications">Notifications</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="no_items">"No items added to card "</string>
 
 
 </resources>

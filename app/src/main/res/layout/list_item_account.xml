@@ -8,46 +8,39 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_small"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="@dimen/stroke_width">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="@dimen/margin_regular">
+            android:padding="@dimen/icon_padding">
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="@dimen/img_category_width"
-                android:layout_height="@dimen/splash_image_height"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/item_name"
+                android:id="@+id/name"
+                style="@style/Theme.Groceries.SubTitle_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_regular"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/account_label_margin_start"
                 app:layout_constraintBottom_toBottomOf="@id/image"
                 app:layout_constraintStart_toEndOf="@id/image"
                 app:layout_constraintTop_toTopOf="@id/image" />
 
-            <TextView
-                android:id="@+id/item_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_regular"
-                android:layout_marginEnd="@dimen/margin_regular"
-                app:layout_constraintBottom_toBottomOf="@id/image"
-                app:layout_constraintEnd_toStartOf="@id/btn_next"
-                app:layout_constraintTop_toTopOf="@id/image" />
-
             <ImageView
-                android:id="@+id/btn_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/icon"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
                 android:src="@drawable/ic_back_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,7 +54,8 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dividerColor="@color/btn_minus_gray"
+        app:dividerColor="@color/divider_account"
         app:layout_constraintTop_toBottomOf="@id/card" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

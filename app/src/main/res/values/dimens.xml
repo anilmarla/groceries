@@ -18,6 +18,7 @@
     <dimen name="margin_top_username">40dp</dimen>
     <dimen name="input_margin_top">30dp</dimen>
     <dimen name="btn_corner_radius">19dp</dimen>
+    <dimen name="btn_corner_radius_small">12dp</dimen>
     <dimen name="button_width">364dp</dimen>
     <dimen name="button_height">67dp</dimen>
     <dimen name="margin_top">25dp</dimen>
@@ -29,6 +30,14 @@
     <dimen name="img_category_width">120dp</dimen>
     <dimen name="txt_sub_title_small">16sp</dimen>
     <dimen name="stroke_width">1dp</dimen>
-    <dimen name="btn_add_remove">45dp</dimen>
+    <dimen name="btn_add_remove">30dp</dimen>
     <dimen name="image_full_view">350dp</dimen>
+    <dimen name="small_image_height">25dp</dimen>
+    <dimen name="small_image_width">32dp</dimen>
+    <dimen name="icon_padding">20dp</dimen>
+    <dimen name="icon_width">18dp</dimen>
+    <dimen name="icon_height">20dp</dimen>
+    <dimen name="account_label_margin_start">20dp</dimen>
+    <dimen name="txt_sub_title_medium">18sp</dimen>
+    <dimen name="profile_image_size">64dp</dimen>
 </resources>

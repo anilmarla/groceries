@@ -20,9 +20,11 @@ ListAdapter<Product, FavouritesAdapter.FavouriteListItemViewHolder>(FavouritesAd
                 .load(product.image)
                 .fitCenter()
                 .into(binding.image)
+
+            binding.root.setOnClickListener {
+                listener.onIconClicked(product)
+            }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteListItemViewHolder {

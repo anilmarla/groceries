@@ -3,20 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/add_category"
-    android:padding="@dimen/margin_regular"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/margin_regular"
     tools:context=".ui.add_category.AddCategoryActivity">
 
-    <TextView
-        android:id="@+id/text_category_name"
-        style="@style/Theme.Groceries.SubTitleSmall"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_regular"
-        android:text="@string/add_new_category"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_chooose_image"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="@dimen/btn_corner_radius_small"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/light_green"
+        app:strokeWidth="@dimen/stroke_width">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_small"
+                android:layout_width="@dimen/small_image_width"
+                android:layout_height="@dimen/small_image_width"
+                android:src="@drawable/ic_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/category_name_layout"
@@ -24,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_category_name">
+        app:layout_constraintTop_toBottomOf="@id/card_chooose_image">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_category_name"
@@ -34,31 +67,15 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/category_image_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_regular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/category_name_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_category_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/image"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_add_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_regular"
-        android:text="@string/add_product"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/category_image_layout" />
+        android:text="@string/add_new_category"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
