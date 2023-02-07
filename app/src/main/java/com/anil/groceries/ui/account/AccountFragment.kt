@@ -42,11 +42,9 @@ class AccountFragment : BaseFragment() {
             }
         }
 
-
     companion object {
         fun newInstance() = AccountFragment()
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,8 +79,6 @@ class AccountFragment : BaseFragment() {
             }
         }
 
-        splashViewModel.getLoggedInUser()
-
         splashViewModel.loggedInUser.observe(viewLifecycleOwner) { user ->
             user?.let {
                 this.user = it
@@ -93,10 +89,10 @@ class AccountFragment : BaseFragment() {
                 Timber.e("Profile pic is : ${it.profilePicture}")
 
                 if (it.profilePicture.isNullOrBlank()) {
-                    Glide.with(binding.root.context).load(it.profilePicture).circleCrop()
+                    Glide.with(binding.root.context).load(R.drawable.ic_person).circleCrop()
                         .into(binding.profileImage)
                 } else {
-                    Glide.with(binding.root.context).load(R.drawable.ic_person).circleCrop()
+                    Glide.with(binding.root.context).load(it.profilePicture).circleCrop()
                         .into(binding.profileImage)
                 }
             }

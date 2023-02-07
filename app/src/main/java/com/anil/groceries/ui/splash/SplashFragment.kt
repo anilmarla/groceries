@@ -35,8 +35,6 @@ class SplashFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getLoggedInUser()
-
         viewModel.loggedInUser.observe(viewLifecycleOwner) { user ->
             if (user == null) {
                 Handler(Looper.getMainLooper()).postDelayed({

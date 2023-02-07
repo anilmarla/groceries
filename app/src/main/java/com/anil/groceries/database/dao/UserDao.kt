@@ -27,5 +27,5 @@ interface UserDao {
     fun getUserEmailAndPassword(email: String, password: String): User
 
     @Query("SELECT * from users WHERE isLoggedIn=1")
-    fun isLoggedInUser(): User
+    fun isLoggedInUser(): LiveData<User>
 }

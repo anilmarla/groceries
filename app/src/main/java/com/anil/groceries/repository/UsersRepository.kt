@@ -33,7 +33,7 @@ class UsersRepository(application: Application) {
         return userDao.getUserEmailAndPassword(email, password)
     }
 
-    fun isLoggedInUser(): User {
+    fun isLoggedInUser(): LiveData<User> {
         return userDao.isLoggedInUser()
     }
 }

@@ -13,7 +13,6 @@ class LoginViewModel(application: Application) : BaseViewModel(application) {
     private var usersRepository: UsersRepository
     var user: MutableLiveData<User> = MutableLiveData()
 
-
     init {
         usersRepository = UsersRepository(application)
     }
