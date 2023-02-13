@@ -16,6 +16,7 @@ import com.anil.groceries.ui.base.BaseFragment
 import com.anil.groceries.ui.product_details.ProductDetailsActivity
 import com.anil.groceries.utils.MarginItemDecoration
 import com.anil.groceries.utils.ProductUtils.Companion.addProductToCart
+import com.google.gson.Gson
 import timber.log.Timber
 
 class ProductListFragment : BaseFragment(), ProductListAdapterListener {
@@ -94,6 +95,15 @@ class ProductListFragment : BaseFragment(), ProductListAdapterListener {
     }
 
     override fun onIconClicked(product: Product) {
+        val gson = Gson()
+        val productJson = gson.toJson(product)
+        Timber.e("Product json $productJson")
+
+        val json = "{\"cartQuantity\":10,\"categoryId\":\"4615dadc-d418-4d23-a2e7-8c17bf8c74d1\",\"id\":\"6e6c7804-59dd-4ce9-bcd9-df210889bd99\",\"image\":\"content://media/external_primary/images/media/1000100968\",\"isAddedCart\":true,\"isAddedFavourite\":true,\"name\":\"Watermelon Json\",\"price\":100}"
+        val p = gson.fromJson(json, Product::class.java)
+        Timber.e("Product obj $p")
+
+
         startActivity(
             Intent(activity, ProductDetailsActivity::class.java).apply {
                 putExtra("product_id", product.id)

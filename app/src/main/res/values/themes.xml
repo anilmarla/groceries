@@ -51,5 +51,14 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <!-- Bottom sheet rounded corners -->
+    <style name="BottomSheetDialogRoundedCorners" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet_attachment</item>
+    </style>
+    <!-- END -->
 
 </resources>

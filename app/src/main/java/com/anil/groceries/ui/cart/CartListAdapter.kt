@@ -21,7 +21,8 @@ class CartListAdapter(private val listener: CartListAdapterListener, val context
                 product.price
             )
             binding.itemQuantity.text = product.cartQuantity.toString()
-            binding.itemPrice.text = (product.cartQuantity * product.price).toString()
+            binding.itemPrice.text = ProductUtils.formatPrice(binding.root.context, product.cartQuantity * product.price).toString()
+
 
             Glide.with(binding.root.context).load(product.image).fitCenter().into(binding.image)
 

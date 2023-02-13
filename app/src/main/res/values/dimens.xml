@@ -40,4 +40,7 @@
     <dimen name="account_label_margin_start">20dp</dimen>
     <dimen name="txt_sub_title_medium">18sp</dimen>
     <dimen name="profile_image_size">64dp</dimen>
+    <dimen name="checkout_text_size">24sp</dimen>
+    <dimen name="accept_order_logo_width">240dp</dimen>
+    <dimen name="accept_order_logo_height">270dp</dimen>
 </resources>

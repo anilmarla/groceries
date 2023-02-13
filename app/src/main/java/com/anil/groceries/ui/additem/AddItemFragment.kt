@@ -108,11 +108,7 @@ class AddItemFragment : BaseFragment() {
     }
 
 
-    /*  private fun initIncomeTypeDropDown() {
-          val items = listOf(getString(R.string.fruits_vegetables), getString(R.string.fruits_vegetables), getString(R.string.fruits_vegetables))
-          val adapter = ArrayAdapter(this, R.layout.list_item_drop_down, items)
-          binding.categoryType.setAdapter(adapter)
-      }*/
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

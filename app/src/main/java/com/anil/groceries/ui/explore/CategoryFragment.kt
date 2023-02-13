@@ -10,10 +10,13 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.anil.groceries.R
 import com.anil.groceries.databinding.FragmentCategoryListBinding
-import com.anil.groceries.ui.add_category.AddCategoryActivity
+import com.anil.groceries.network.Result
+import com.anil.groceries.ui.addCategory.AddCategoryActivity
+import com.anil.groceries.ui.addNewProductWithCategory.AddNewProductWithCategoryActivity
 import com.anil.groceries.ui.base.BaseFragment
 import com.anil.groceries.ui.productlist.ProductListActivity
 import com.anil.groceries.utils.MarginItemDecoration
+import timber.log.Timber
 
 class CategoryFragment : BaseFragment(), CategoryListAdapterListener {
     private lateinit var binding: FragmentCategoryListBinding
@@ -38,8 +41,34 @@ class CategoryFragment : BaseFragment(), CategoryListAdapterListener {
         binding.fab.setOnClickListener {
             launchAddCategory()
         }
+        binding.fabForProduct.setOnClickListener {
+            launchAddProductWithCategory()
+
+        }
         renderList()
+
+        // get posts
+        viewModel.getPosts()
+
+        // observe posts
+        viewModel.posts.observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+                is Result.Success -> {
+                    binding.progressBar.isVisible = false
+
+                    val posts = result.responseData
+                    Timber.e("Posts $posts")
+                }
+                is Result.Error -> {
+                    binding.progressBar.isVisible = false
+                }
+            }
+        }
     }
+
 
     private fun renderList() {
         adapter = CategoriesAdapter(this)
@@ -63,6 +92,10 @@ class CategoryFragment : BaseFragment(), CategoryListAdapterListener {
         startActivity(intent)
     }
 
+    private fun launchAddProductWithCategory() {
+        val intent = Intent(activity, AddNewProductWithCategoryActivity::class.java)
+        startActivity(intent)
+    }
 
     override fun onCardClicked(categoryId: String, name: String) {
         val intent = Intent(activity, ProductListActivity::class.java).apply {

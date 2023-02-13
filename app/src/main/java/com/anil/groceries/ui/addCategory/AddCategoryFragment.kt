@@ -1,4 +1,4 @@
-package com.anil.groceries.ui.add_category
+package com.anil.groceries.ui.addCategory
 
 import android.Manifest
 import android.os.Bundle

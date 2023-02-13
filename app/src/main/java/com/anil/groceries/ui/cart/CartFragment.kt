@@ -10,9 +10,12 @@ import androidx.fragment.app.viewModels
 import com.anil.groceries.R
 import com.anil.groceries.databinding.FragmentCartBinding
 import com.anil.groceries.model.Product
+import com.anil.groceries.ui.acceptOrder.OrderConfirmationActivity
 import com.anil.groceries.ui.base.BaseFragment
+import com.anil.groceries.ui.checkout.CheckoutBottomSheetFragment
 import com.anil.groceries.ui.product_details.ProductDetailsActivity
 import com.anil.groceries.utils.ProductUtils.Companion.addProductToCart
+import com.anil.groceries.utils.ProductUtils.Companion.formatPrice
 import com.anil.groceries.utils.ProductUtils.Companion.minusProduct
 import timber.log.Timber
 
@@ -25,6 +28,7 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
     companion object {
         fun newInstance(bundle: Bundle?) = CartFragment().apply {
             arguments = bundle
+
         }
     }
 
@@ -51,6 +55,23 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
 
             renderPrice(it)
 
+            binding.btnCheckout.setOnClickListener {
+                activity?.let { act ->
+                    val checkoutBottomSheet = CheckoutBottomSheetFragment(object :
+                        CheckoutBottomSheetFragment.CheckoutBottomSheetFragmentListener {
+                        override fun onItemClicked(position: Int) {
+                            when (position) {
+                                0 -> {}
+                                1 -> {}
+                            }
+                        }
+                        override fun onActionButtonClicked() {
+                            startActivity(Intent(activity, OrderConfirmationActivity::class.java))
+                        }
+                    })
+                    checkoutBottomSheet.show(act.supportFragmentManager, "dialog")
+                }
+            }
         }
     }
 
@@ -64,7 +85,7 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
             }
             Timber.e("The sum is $sum")
             binding.btnCheckout.text = if (sum > 1) {
-                getString(R.string.checkout, sum)
+                getString(R.string.checkout, formatPrice(context, sum))
             } else {
                 getString(R.string.no_products_cart)
             }
@@ -88,7 +109,6 @@ class CartFragment : BaseFragment(), CartListAdapterListener {
         viewModel.update(product)
         toast("Item is removed from the Cart")
     }
-
     override fun onMinusClicked(product: Product) {
         viewModel.update(minusProduct(product))
     }
