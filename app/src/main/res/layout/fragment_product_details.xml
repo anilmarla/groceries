@@ -5,14 +5,21 @@
     android:layout_height="match_parent"
     android:padding="@dimen/margin_regular"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.product_details.ProductDetailsFragment">
+    tools:context=".ui.productDetails.ProductDetailsFragment">
 
-    <ImageView
-        android:id="@+id/image"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_full_view"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_full_view"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/name"
@@ -22,7 +29,7 @@
         style="@style/Theme.Groceries.SubTitle"
         android:layout_marginTop="@dimen/margin_extra_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image" />
+        app:layout_constraintTop_toBottomOf="@id/viewpager" />
 
     <ImageButton
         android:id="@+id/btn_favourite"
@@ -90,5 +97,15 @@
         android:text="@string/add_product_cart"
         app:cornerRadius="@dimen/btn_corner_radius"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

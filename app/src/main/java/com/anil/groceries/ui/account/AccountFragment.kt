@@ -1,6 +1,6 @@
 package com.anil.groceries.ui.account
 
-import android.Manifest
+import   android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -64,7 +64,7 @@ class AccountFragment : BaseFragment() {
 
         items.add(Account(R.drawable.ic_orders, getString(R.string.orders)))
         items.add(Account(R.drawable.ic_my_details, getString(R.string.my_details)))
-        items.add(Account(R.drawable.ic_delivery_address, getString(R.string.delivert_address)))
+        items.add(Account(R.drawable.ic_delivery_address, getString(R.string.delivery_address)))
         items.add(Account(R.drawable.ic_payment_methods, getString(R.string.payment_methods)))
         items.add(Account(R.drawable.ic_promo_cord, getString(R.string.promo_code)))
         items.add(Account(R.drawable.ic_notification, getString(R.string.notifications)))

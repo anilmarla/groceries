@@ -91,7 +91,7 @@ class AddItemFragment : BaseFragment() {
 
 
                 //if (product == null) {
-                    categoryId?.let {
+                    /*categoryId?.let {
                         viewModel.addProduct(
                             name = name,
                             price = price.toInt(),
@@ -102,17 +102,13 @@ class AddItemFragment : BaseFragment() {
                         Timber.e("the product is $name ")
                         Timber.e("price is $price ")
                         activity?.finish()
-                    }
+                    }*/
             }
         }
     }
 
 
-    /*  private fun initIncomeTypeDropDown() {
-          val items = listOf(getString(R.string.fruits_vegetables), getString(R.string.fruits_vegetables), getString(R.string.fruits_vegetables))
-          val adapter = ArrayAdapter(this, R.layout.list_item_drop_down, items)
-          binding.categoryType.setAdapter(adapter)
-      }*/
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

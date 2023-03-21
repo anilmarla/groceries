@@ -13,13 +13,16 @@ interface ProductDao {
     @Query("Select * from products where isAddedCart=1")
     fun getCartProducts(): LiveData<List<Product>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(product: Product)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(products: List<Product>)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(product: Product)
 
-    @Query("SELECT * from products")
+    @Query("SELECT * from products ORDER BY title ASC")
     fun getAll(): LiveData<List<Product>>
 
     @Delete
@@ -30,4 +33,9 @@ interface ProductDao {
 
     @Query("select * from products where id=:id limit 1")
     fun getProduct(id: String): LiveData<Product>
+
+    @Query("SELECT * FROM products ORDER BY title ASC")
+    fun sortedByName(): LiveData<List<Product>>
+
+
 }

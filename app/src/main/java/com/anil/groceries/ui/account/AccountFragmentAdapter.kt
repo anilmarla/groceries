@@ -16,7 +16,6 @@ class AccountFragmentAdapter: ListAdapter<Account, AccountFragmentAdapter.Accoun
 
             Glide.with(binding.root.context).load(account.icon).centerCrop().into(binding.image)
 
-
         }
 
     }

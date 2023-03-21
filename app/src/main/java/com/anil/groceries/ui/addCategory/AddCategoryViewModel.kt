@@ -1,21 +1,19 @@
-package com.anil.groceries.ui.add_category
+package com.anil.groceries.ui.addCategory
 
 import android.app.Application
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anil.groceries.model.Category
-import com.anil.groceries.model.User
-import com.anil.groceries.repository.CatergoriesRepository
+import com.anil.groceries.repository.CategoriesRepository
 import com.anil.groceries.ui.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 
 class AddCategoryViewModel(application: Application) : BaseViewModel(application) {
-    private var catergoriesRepository: CatergoriesRepository
+    private var catergoriesRepository: CategoriesRepository
 
     init {
-        catergoriesRepository = CatergoriesRepository(application)
+        catergoriesRepository = CategoriesRepository(application)
     }
 
     fun addCategory(name: String, image: String, backgroundColor: Int, borderColor: Int) {

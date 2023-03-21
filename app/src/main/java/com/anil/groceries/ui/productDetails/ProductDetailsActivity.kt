@@ -1,4 +1,4 @@
-package com.anil.groceries.ui.product_details
+package com.anil.groceries.ui.productDetails
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

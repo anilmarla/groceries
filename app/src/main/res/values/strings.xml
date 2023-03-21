@@ -52,7 +52,7 @@
     <string name="products">Products</string>
     <string name="no_products_message">No Products are available</string>
     <string name="no_products_cart">No products added to cart</string>
-    <string name="checkout">Check out price is %d </string>
+    <string name="checkout">Check out price is %s </string>
     <string name="rupee">₹%d</string>
     <string name="add_product_cart">Add To Cart</string>
     <string name="no_products_favourites">No products in favourites</string>
@@ -60,13 +60,19 @@
     <string name="error_select_category_image">Please select category image</string>
     <string name="orders">Orders</string>
     <string name="my_details">My Details</string>
-    <string name="delivert_address">Delivery Address</string>
+    <string name="delivery_address">Delivery Address</string>
     <string name="payment_methods">Payment Methods</string>
     <string name="promo_code">Promo Code</string>
     <string name="notifications">Notifications</string>
     <string name="help">Help</string>
     <string name="about">About</string>
     <string name="no_items">"No items added to card "</string>
+    <string name="txt_checkout">Checkout</string>
+    <string name="delivery">Delivery</string>
+    <string name="selectmethod">Select Method</string>
+    <string name="order_accepted">Your order has been \naccepted</string>
+    <string name="order_accepted_description">Your item has been placed and is on \nit\'s way to being processed</string>
+    <string name="no_internet_message">"No internet is available "</string>
 
 
 </resources>

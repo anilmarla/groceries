@@ -8,7 +8,7 @@ class ProductListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category_list)
+        setContentView(R.layout.activity_product_list)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()

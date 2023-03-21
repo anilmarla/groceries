@@ -14,10 +14,10 @@ ListAdapter<Product, FavouritesAdapter.FavouriteListItemViewHolder>(FavouritesAd
     class FavouriteListItemViewHolder(val binding: ListItemFavoriteBinding) :
     RecyclerView.ViewHolder(binding.root){
         fun bind(product: Product, listener: FavouritesAdapterListener) {
-            binding.itemName.text = product.name
+            binding.itemName.text = product.title
             binding.itemPrice.text = product.price.toString()
             Glide.with(binding.root.context)
-                .load(product.image)
+                .load(product.thumbnail)
                 .fitCenter()
                 .into(binding.image)
 
