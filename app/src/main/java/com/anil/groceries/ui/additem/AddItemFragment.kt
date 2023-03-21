@@ -91,7 +91,7 @@ class AddItemFragment : BaseFragment() {
 
 
                 //if (product == null) {
-                    categoryId?.let {
+                    /*categoryId?.let {
                         viewModel.addProduct(
                             name = name,
                             price = price.toInt(),
@@ -102,7 +102,7 @@ class AddItemFragment : BaseFragment() {
                         Timber.e("the product is $name ")
                         Timber.e("price is $price ")
                         activity?.finish()
-                    }
+                    }*/
             }
         }
     }

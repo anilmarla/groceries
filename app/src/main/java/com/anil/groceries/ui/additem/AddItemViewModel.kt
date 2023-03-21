@@ -19,7 +19,7 @@ class AddItemViewModel(application: Application) : BaseViewModel(application) {
         productsRepository = ProductsRepository(application)
     }
 
-    fun addProduct(name: String, price: Int, image: String, categoryId: String) {
+   /* fun addProduct(name: String, price: Int, image: String, categoryId: String) {
         val product = Product(
             id = UUID.randomUUID().toString(),
             name = name,
@@ -31,7 +31,7 @@ class AddItemViewModel(application: Application) : BaseViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             productsRepository.insert(product)
         }
-    }
+    }*/
 
     fun getCategoryProductsById(categoryId: String){
         viewModelScope.launch(Dispatchers.IO) {

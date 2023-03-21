@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -17,10 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Groceries"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
             android:name=".ui.addNewProductWithCategory.AddNewProductWithCategoryActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -28,15 +28,15 @@
         <activity
             android:name=".ui.acceptOrder.OrderConfirmationActivity"
             android:exported="false"
-            android:theme="@style/Theme.Groceries.NoActionBar">
+            android:theme="@style/Theme.Groceries.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ui.product_details.ProductDetailsActivity"
+            android:name=".ui.productDetails.ProductDetailsActivity"
             android:exported="false"
-            android:parentActivityName=".ui.productlist.ProductListActivity">
+            android:parentActivityName=".ui.productlist.ProductListActivity" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -44,7 +44,7 @@
         <activity
             android:name=".ui.cart.CartActivity"
             android:exported="false"
-            android:theme="@style/Theme.Groceries.NoActionBar">
+            android:theme="@style/Theme.Groceries.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -54,7 +54,7 @@
             android:exported="false"
             android:label="@string/add_new_category"
             android:parentActivityName=".ui.home.HomeActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -62,8 +62,7 @@
         <activity
             android:name=".ui.productlist.ProductListActivity"
             android:exported="false"
-            android:label="@string/products"
-            android:parentActivityName=".ui.home.HomeActivity">
+            android:label="@string/products" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -73,14 +72,14 @@
             android:exported="false"
             android:label="@string/add_product"
             android:parentActivityName=".ui.productlist.ProductListActivity"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -88,7 +87,7 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false"
-            android:theme="@style/Theme.Groceries.NoActionBar">
+            android:theme="@style/Theme.Groceries.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -96,7 +95,7 @@
         <activity
             android:name=".ui.register.RegisterActivity"
             android:exported="true"
-            android:theme="@style/Theme.Groceries.NoActionBar">
+            android:theme="@style/Theme.Groceries.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -104,7 +103,7 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Groceries.NoActionBar">
+            android:theme="@style/Theme.Groceries.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -117,7 +116,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

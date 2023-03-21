@@ -13,7 +13,7 @@ import com.anil.groceries.model.Product
 import com.anil.groceries.ui.acceptOrder.OrderConfirmationActivity
 import com.anil.groceries.ui.base.BaseFragment
 import com.anil.groceries.ui.checkout.CheckoutBottomSheetFragment
-import com.anil.groceries.ui.product_details.ProductDetailsActivity
+import com.anil.groceries.ui.productDetails.ProductDetailsActivity
 import com.anil.groceries.utils.ProductUtils.Companion.addProductToCart
 import com.anil.groceries.utils.ProductUtils.Companion.formatPrice
 import com.anil.groceries.utils.ProductUtils.Companion.minusProduct

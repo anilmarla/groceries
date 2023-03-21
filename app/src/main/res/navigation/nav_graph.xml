@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/explore">
+    app:startDestination="@id/products">
 
     <fragment
-        android:id="@+id/explore"
-        android:name="com.anil.groceries.ui.explore.CategoryFragment"
-        android:label="@string/explore"
-        tools:layout="@layout/fragment_explore" />
+        android:id="@+id/products"
+        android:name="com.anil.groceries.ui.productlist.ProductListFragment"
+        android:label="Products" />
+
     <fragment
         android:id="@+id/cart"
         android:name="com.anil.groceries.ui.cart.CartFragment"
@@ -25,5 +25,6 @@
         android:name="com.anil.groceries.ui.account.AccountFragment"
         android:label="@string/account"
         tools:layout="@layout/fragment_account" />
+
 
 </navigation>

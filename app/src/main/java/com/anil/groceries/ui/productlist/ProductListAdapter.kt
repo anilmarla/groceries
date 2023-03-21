@@ -15,14 +15,20 @@ class ProductListAdapter(
     private val listener: ProductListAdapterListener,
     private val context: Context?
 ) :
-    ListAdapter<Product, ProductListAdapter.ProductItemVIewHolder>(ProductAdapterDiffCallBack()) {
+    ListAdapter<Product, ProductListAdapter.ProductItemVIewHolder>(
+        ProductAdapterDiffCallBack()
+    ) {
     class ProductItemVIewHolder(val binding: ListItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product, listener: ProductListAdapterListener, context: Context?) {
-            binding.itemName.text = product.name
+        fun bind(
+            product: Product,
+            listener: ProductListAdapterListener,
+            context: Context?
+        ) {
+            binding.itemName.text = product.title
             binding.itemPrice.text = formatPrice(context = context, product.price)
 
-            Glide.with(binding.root.context).load(product.image)
+            Glide.with(binding.root.context).load(product.thumbnail)
                 .fitCenter()
                 .into(binding.image)
 

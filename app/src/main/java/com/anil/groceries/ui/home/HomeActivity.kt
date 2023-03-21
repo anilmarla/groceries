@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.explore, R.id.cart, R.id.favourite, R.id.account
+                R.id.products, R.id.cart, R.id.favourite, R.id.account
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -46,5 +46,6 @@ class HomeActivity : AppCompatActivity() {
     private fun loadFragment(title: String, fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         setTitle(title)
+
     }
 }

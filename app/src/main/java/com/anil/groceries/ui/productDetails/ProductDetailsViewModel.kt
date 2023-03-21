@@ -1,4 +1,4 @@
-package com.anil.groceries.ui.product_details
+package com.anil.groceries.ui.productDetails
 
 import android.app.Application
 import androidx.lifecycle.LiveData

@@ -15,7 +15,7 @@ class CartListAdapter(private val listener: CartListAdapterListener, val context
     class CartListItemViewHolder(val binding: ListItemCartBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product, listener: CartListAdapterListener, context: Context?) {
-            binding.itemName.text = product.name
+            binding.itemName.text = product.title
             binding.itemPrice.text = ProductUtils.formatPrice(
                 context = context,
                 product.price
@@ -24,7 +24,7 @@ class CartListAdapter(private val listener: CartListAdapterListener, val context
             binding.itemPrice.text = ProductUtils.formatPrice(binding.root.context, product.cartQuantity * product.price).toString()
 
 
-            Glide.with(binding.root.context).load(product.image).fitCenter().into(binding.image)
+            Glide.with(binding.root.context).load(product.thumbnail).fitCenter().into(binding.image)
 
             binding.btnItemAdd.setOnClickListener {
                 listener.onPlusClicked(product)

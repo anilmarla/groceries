@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import com.anil.groceries.databinding.FragmentFavouriteBinding
 import com.anil.groceries.model.Product
 import com.anil.groceries.ui.base.BaseFragment
-import com.anil.groceries.ui.product_details.ProductDetailsActivity
+import com.anil.groceries.ui.productDetails.ProductDetailsActivity
 import timber.log.Timber
 
 class FavouriteFragment : BaseFragment(), FavouritesAdapterListener {

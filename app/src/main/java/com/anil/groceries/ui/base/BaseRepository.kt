@@ -5,9 +5,6 @@ import com.anil.groceries.network.Result
 import retrofit2.Response
 import timber.log.Timber
 
-/**
- * Created by Nadeem Ansari on 10/10/20.
- */
 open class BaseRepository {
 
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Result<T> {

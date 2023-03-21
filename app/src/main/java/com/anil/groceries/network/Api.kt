@@ -13,7 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 const val NETWORK_TIMEOUT = 30L
-const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+//const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+const val BASE_URL = "https://dummyjson.com/"
 
 class Api constructor(private val context: Context) {
 

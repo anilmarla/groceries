@@ -1,6 +1,6 @@
 package com.anil.groceries.ui.account
 
-import android.Manifest
+import   android.Manifest
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
